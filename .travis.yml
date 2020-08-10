@@ -7,8 +7,8 @@ before_install:
  - docker build -t joenid/react-test -f ./client/Dockerfile.dev ./client
 
 script: 
- - docekr run joenid/react-test npm test -- --coverage
- #- docker run -e CI=true joenid/react-test npm test
+ #- docekr run joenid/react-test npm test -- --coverage
+ - docker run -e CI=true joenid/react-test npm test
 
 after_success:
  - docker build -t joenid/multi-client ./client
